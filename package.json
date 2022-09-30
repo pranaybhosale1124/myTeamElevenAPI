@@ -1,0 +1,30 @@
+{
+  "name": "myteamelevenapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranaybhosale1124/myTeamElevenAPI.git"
+  },
+  "author": "Pranay Bhosale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranaybhosale1124/myTeamElevenAPI/issues"
+  },
+  "homepage": "https://github.com/pranaybhosale1124/myTeamElevenAPI#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "sequelize": "^6.23.0",
+    "sequelize-auto": "^0.8.8"
+  }
+}

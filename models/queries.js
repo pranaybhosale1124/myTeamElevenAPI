@@ -1,0 +1,7 @@
+module.exports={
+    GET_ALL_PLAYERS:"select player.*, team1Data.team_id as 'team1Data.team_id',team1Data.team_name as 'team1Data.team_name', team1Data.team_owner as 'team1Data.team_owner', team1Data.temporary_team as 'team1Data.temporary_team', team2Data.team_id as 'team2Data.team_id',team2Data.team_name as 'team2Data.team_name', team2Data.team_owner as 'team2Data.team_owner', team2Data.temporary_team as 'team2Data.temporary_team', team3Data.team_id as 'team3Data.team_id',team3Data.team_name as 'team3Data.team_name', team3Data.team_owner as 'team3Data.team_owner', team3Data.temporary_team as 'team3Data.temporary_team', team4Data.team_id as 'team4Data.team_id',team4Data.team_name as 'team4Data.team_name', team4Data.team_owner as 'team4Data.team_owner', team4Data.temporary_team as 'team4Data.temporary_team' from player left join teams_data team1Data on player.player_team_1_id=team1Data.team_id left join teams_data team2Data on player.player_team_2_id=team2Data.team_id left join teams_data team3Data on player.player_team_3_id=team2Data.team_id left join teams_data team4Data on player.player_team_4_id=team2Data.team_id;",
+
+    GET_TEAM_PLAYERS:"select player.player_id as 'player.player_id', player.player_name as 'player.player_name', player.player_position as 'player.player_position',player_rating as 'player.player_rating' from teams_data left join player on teams_data.team_id in(player.player_team_1_id,player.player_team_2_id,player.player_team_3_id,player.player_team_4_id) where team_id=?;",
+
+    
+}
