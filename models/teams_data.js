@@ -9,13 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     },
     team_name: {
       type: DataTypes.STRING(25),
-      allowNull: false,
+      allowNull: true,
       unique: "team_name"
-    },
-    team_initials: {
-      type: DataTypes.STRING(3),
-      allowNull: false,
-      unique: "team_initials"
     },
     team_owner: {
       type: DataTypes.STRING(25),
@@ -25,10 +20,6 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       defaultValue: 1
-    },
-    team_logo: {
-      type: DataTypes.STRING(255),
-      allowNull: true
     }
   }, {
     sequelize,
@@ -41,14 +32,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "team_id" },
-        ]
-      },
-      {
-        name: "team_initials",
-        unique: true,
-        using: "BTREE",
-        fields: [
-          { name: "team_initials" },
         ]
       },
       {

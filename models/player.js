@@ -26,15 +26,43 @@ module.exports = function(sequelize, DataTypes) {
     },
     player_team_2_id: {
       type: DataTypes.BIGINT,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
     },
     player_team_3_id: {
       type: DataTypes.BIGINT,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
     },
     player_team_4_id: {
       type: DataTypes.BIGINT,
-      allowNull: true
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
+    },
+    player_team_5_id: {
+      type: DataTypes.BIGINT,
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
+    },
+    player_team_6_id: {
+      type: DataTypes.BIGINT,
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
     },
     games_played: {
       type: DataTypes.BIGINT,
@@ -105,6 +133,41 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "player_team_1_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_2",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_2_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_3",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_3_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_4",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_4_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_5",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_5_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_6",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_6_id" },
         ]
       },
     ]

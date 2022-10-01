@@ -7,6 +7,12 @@ The A.belongsTo(B) association means that a One-To-One relationship exists betwe
 
 The A.hasMany(B) association means that a One-To-Many relationship exists between A and B, with the foreign key being defined in the target model (B).
 
+
+
+#Create Sequelize Model:
+cd node_modules\.bin --> 
+sequelize-auto -o "../../models" -d my_team_eleven -h localhost -u root -p 3306 -x root -e mysql
+
 #CREATEING RELATION: PLAYER HAS MULTIPLE TEAMS_DATA
 <!-- models.player.belongsTo(models.teams_data,{
     as: 'team1Data',

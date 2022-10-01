@@ -31,6 +31,15 @@ models.player.belongsTo(models.teams_data,{
     foreignKey: 'player_team_4_id'
 })
 
+models.player.belongsTo(models.teams_data,{
+    as: 'team5Data',
+    foreignKey: 'player_team_5_id'
+})
+
+models.player.belongsTo(models.teams_data,{
+    as: 'team6Data',
+    foreignKey: 'player_team_6_id'
+})
 //test route
 router.get('/player-home',(req,res)=>{
     res.send(true)
@@ -94,7 +103,13 @@ router.get('/get-player-info/:player_id',(req,res)=>{
         },
         {
             model:models.teams_data,
-            as:'team4Data'
+            as:'teamData'
+        },{
+            model:models.teams_data,
+            as:'team5Data'
+        },{
+            model:models.teams_data,
+            as:'team6Data'
         },
     ]}
     models.player.findOne(getPlayerInfoById).then((result)=>{
