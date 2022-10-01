@@ -94,6 +94,10 @@ function initModels(sequelize) {
   teams_data.hasMany(player, { as: "player_team_5_players", foreignKey: "player_team_5_id"});
   player.belongsTo(teams_data, { as: "player_team_6", foreignKey: "player_team_6_id"});
   teams_data.hasMany(player, { as: "player_team_6_players", foreignKey: "player_team_6_id"});
+  player.belongsTo(teams_data, { as: "player_team_7", foreignKey: "player_team_7_id"});
+  teams_data.hasMany(player, { as: "player_team_7_players", foreignKey: "player_team_7_id"});
+  player.belongsTo(teams_data, { as: "player_team_8", foreignKey: "player_team_8_id"});
+  teams_data.hasMany(player, { as: "player_team_8_players", foreignKey: "player_team_8_id"});
 
   return {
     contest,

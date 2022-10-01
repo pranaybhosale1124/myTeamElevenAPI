@@ -64,6 +64,22 @@ module.exports = function(sequelize, DataTypes) {
         key: 'team_id'
       }
     },
+    player_team_7_id: {
+      type: DataTypes.BIGINT,
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
+    },
+    player_team_8_id: {
+      type: DataTypes.BIGINT,
+      allowNull: true,
+      references: {
+        model: 'teams_data',
+        key: 'team_id'
+      }
+    },
     games_played: {
       type: DataTypes.BIGINT,
       allowNull: true
@@ -136,20 +152,6 @@ module.exports = function(sequelize, DataTypes) {
         ]
       },
       {
-        name: "player_ibfk_2",
-        using: "BTREE",
-        fields: [
-          { name: "player_team_2_id" },
-        ]
-      },
-      {
-        name: "player_ibfk_3",
-        using: "BTREE",
-        fields: [
-          { name: "player_team_3_id" },
-        ]
-      },
-      {
         name: "player_ibfk_4",
         using: "BTREE",
         fields: [
@@ -168,6 +170,34 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "player_team_6_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_2",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_2_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_3",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_3_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_7_idx",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_7_id" },
+        ]
+      },
+      {
+        name: "player_ibfk_8_idx",
+        using: "BTREE",
+        fields: [
+          { name: "player_team_8_id" },
         ]
       },
     ]

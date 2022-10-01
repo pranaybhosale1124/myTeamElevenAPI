@@ -12,6 +12,11 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true,
       unique: "team_name"
     },
+    team_initial: {
+      type: DataTypes.STRING(3),
+      allowNull: true,
+      unique: "team_initial_UNIQUE"
+    },
     team_owner: {
       type: DataTypes.STRING(25),
       allowNull: true
@@ -40,6 +45,14 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "team_name" },
+        ]
+      },
+      {
+        name: "team_initial_UNIQUE",
+        unique: true,
+        using: "BTREE",
+        fields: [
+          { name: "team_initial" },
         ]
       },
     ]
